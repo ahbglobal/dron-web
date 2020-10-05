@@ -1,30 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to <span style="font-size:40px">{{ title }}</span>!
-  </h1>
-  <img border="0" src="https://jenkins-x.io/images/logo.png" width="300" height="300">
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div [ngClass]="{'subscription-bar-visible': subscriptionStatusBarVisible()}" class="d-flex flex-column flex-root">
+    <default-layout *ngIf="theme=='default'"></default-layout>
+    <theme2-layout *ngIf="theme=='theme2'"></theme2-layout>
+    <theme3-layout *ngIf="theme=='theme3'"></theme3-layout>
+    <theme4-layout *ngIf="theme=='theme4'"></theme4-layout>
+    <theme5-layout *ngIf="theme=='theme5'"></theme5-layout>
+    <theme6-layout *ngIf="theme=='theme6'"></theme6-layout>
+    <theme7-layout *ngIf="theme=='theme7'"></theme7-layout>
+    <theme8-layout *ngIf="theme=='theme8'"></theme8-layout>
+    <theme9-layout *ngIf="theme=='theme9'"></theme9-layout>
+    <theme10-layout *ngIf="theme=='theme10'"></theme10-layout>
+    <theme11-layout *ngIf="theme=='theme11'"></theme11-layout>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<h1>{{ title}}</h1>
-<p>This app was created with the angular cli<p>
-Developers should have the following installed 
-<ul>
-  <li><p>npm 8.x</p></li>
-  <li><p>node 5.x</p></li>
-  <li><p>angluar cli 6.x (optional)</p></li>
-</ul>
+<kt-scroll-top></kt-scroll-top>
 
+<loginAttemptsModal #loginAttemptsModal></loginAttemptsModal>
+<linkedAccountsModal *ngIf="!installationMode" #linkedAccountsModal (modalClose)="getRecentlyLinkedUsers()"></linkedAccountsModal>
+<userDelegationsModal #userDelegationsModal></userDelegationsModal>
+<changePasswordModal #changePasswordModal></changePasswordModal>
+<changeProfilePictureModal #changeProfilePictureModal></changeProfilePictureModal>
+<mySettingsModal #mySettingsModal (modalSave)="onMySettingsModalSaved()"></mySettingsModal>
+<notificationSettingsModal #notificationSettingsModal></notificationSettingsModal>
+
+<commonLookupModal #userLookupModal (itemSelected)="chatBarComponent.addFriendSelected($event)"></commonLookupModal>
+<chat-bar #chatBarComponent *ngIf="!installationMode" [userLookupModal]="userLookupModal"></chat-bar>
+<theme-selection-panel #themeSelectionPanelComponent *ngIf="!installationMode && isQuickThemeSelectEnabled"></theme-selection-panel> 
+<session-timeout #sessionTimeout *ngIf="IsSessionTimeOutEnabled"></session-timeout>
