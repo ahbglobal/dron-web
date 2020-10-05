@@ -7,18 +7,16 @@
     "callable-types": true,
     "class-name": true,
     "comment-format": [
-      true,
-      "check-space"
+      true
     ],
     "curly": true,
     "deprecation": {
-      "severity": "warn"
+      "severity": "warning"
     },
     "eofline": true,
     "forin": true,
     "import-blacklist": [
-      true,
-      "rxjs/Rx"
+      true
     ],
     "import-spacing": true,
     "indent": [
@@ -28,8 +26,7 @@
     "interface-over-type-literal": true,
     "label-position": true,
     "max-line-length": [
-      true,
-      140
+      false
     ],
     "member-access": false,
     "member-ordering": [
@@ -58,21 +55,20 @@
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
-    "no-eval": true,
+    "no-eval": false,
     "no-inferrable-types": [
       true,
       "ignore-params"
     ],
     "no-misused-new": true,
     "no-non-null-assertion": true,
-    "no-shadowed-variable": true,
+    "no-shadowed-variable": false,
     "no-string-literal": false,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
     "no-unused-expression": true,
-    "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
     "one-line": [
@@ -82,12 +78,12 @@
       "check-else",
       "check-whitespace"
     ],
-    "prefer-const": true,
+    "prefer-const": false,
     "quotemark": [
       true,
       "single"
     ],
-    "radix": true,
+    "radix": false,
     "semicolon": [
       true,
       "always"
@@ -106,6 +102,7 @@
         "variable-declaration": "nospace"
       }
     ],
+    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
     "whitespace": [
@@ -116,15 +113,29 @@
       "check-separator",
       "check-type"
     ],
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
+    "directive-selector": [
+      false,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
+    "component-selector": [
+      false,
+      "element",
+      "app",
+      "kebab-case"
+    ],
+    "no-inputs-metadata-property": true,
+    "no-outputs-metadata-property": true,
+    "no-host-metadata-property": true,
+    "no-input-rename": false,
     "no-output-rename": true,
-    "use-life-cycle-interface": true,
+    "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+    "no-access-missing-member": false,
+    "templates-use-public": true,
+    "invoke-injectable": true
   }
 }
